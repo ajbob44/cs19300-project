@@ -36,5 +36,3 @@ def getthhw():
             homework.append(["pysch","pysch",datetime.fromisoformat(assignment['due_date']).timestamp()])
 
     return homework
-
-print(getthhw())

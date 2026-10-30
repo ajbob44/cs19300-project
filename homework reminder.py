@@ -1,6 +1,7 @@
 import time
 import requests
 from edstemhw import getedhw
+from tophathw import getthhw
 
 f = open("data.txt","r")
 for l in f.readlines():
@@ -9,12 +10,11 @@ for l in f.readlines():
 f.close()
 
 while True:
-    homeworks = []
-    homeworks+=[["test course", "test hw", 1793393844]]#getedhw()
+    homeworks = getedhw() + getthhw()
 
     duesoon = []
     for homework in homeworks:
-        if homework[2] - time.time() > 0 and homework[2] - time.time() < 14400:
+        if homework[2] - time.time() > 0 and homework[2] - time.time() < 1440000:
             duesoon.append(homework)
 
     for duehw in duesoon:
