@@ -10,11 +10,11 @@ for l in f.readlines():
 f.close()
 
 while True:
-    homeworks = getedhw() + getthhw()
+    homeworks = getedhw()# + getthhw()
 
     duesoon = []
     for homework in homeworks:
-        if homework[2] - time.time() > 0 and homework[2] - time.time() < 1440000:
+        if homework[2] - time.time() > 0 and homework[2] - time.time() < 14400000:
             duesoon.append(homework)
 
     for duehw in duesoon:
