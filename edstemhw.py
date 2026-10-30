@@ -31,7 +31,7 @@ def getedhw():
     f = open("data.txt","w")
     for i in range(len(tokens)):
         if i == edi:
-            f.write(f"edstem token:{token}\n")
+            f.write(f"edstem token={token}\n")
         else:
             f.write(tokens[i])
     f.close()
