@@ -1,0 +1,1 @@
+this project will be a program that I can run in the background to remind me when I have homework due soon. It will automatically grab my homework assignments and due dates from the websites online and ping me on discord to remind me when I have something due soon. I tend to be forgetful, so sometimes I miss homework assignments.
