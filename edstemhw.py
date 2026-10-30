@@ -4,12 +4,12 @@ from datetime import datetime
 
 
 def getedhw():
-    f = open("tokens.txt","r")
+    f = open("data.txt","r")
     tokens = f.readlines()
     f.close()
     for i in range(len(tokens)):
         if tokens[i].startswith("edstem token"):
-            token = tokens[i].split(":")[1].strip()
+            token = tokens[i].split("=")[1].strip()
             edi = i
 
     headers = {
@@ -28,7 +28,7 @@ def getedhw():
     r = requests.post("https://us.edstem.org/api/renew_token",headers=headers)
     token = json.loads(r.text)['token']
 
-    f = open("tokens.txt","w")
+    f = open("data.txt","w")
     for i in range(len(tokens)):
         if i == edi:
             f.write(f"edstem token:{token}\n")
@@ -46,5 +46,3 @@ def getedhw():
                 homework.append([course[1],lesson['title'],datetime.fromisoformat(lesson['effective_due_at']).timestamp()])
 
     return homework
-
-print(getedhw())
