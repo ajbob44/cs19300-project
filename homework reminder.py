@@ -2,6 +2,7 @@ import time
 import requests
 from edstemhw import getedhw
 from tophathw import getthhw
+from gradescopehw import getgradescopehw
 
 f = open("data.txt","r")
 for l in f.readlines():
@@ -10,7 +11,7 @@ for l in f.readlines():
 f.close()
 
 while True:
-    homeworks = getedhw()# + getthhw()
+    homeworks = getedhw() + getgradescopehw()# + getthhw()
 
     duesoon = []
     for homework in homeworks:
