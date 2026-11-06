@@ -42,7 +42,7 @@ def getedhw():
         r = requests.get(f"https://us.edstem.org/api/courses/{course[0]}/lessons",headers=headers)
         lessons = json.loads(r.text)['lessons']
         for lesson in lessons:
-            if lesson['status'] != "completed" and lesson['effective_due_at'] != None and lesson['status'] != "attempted":
+            if lesson['status'] != "completed" and lesson['effective_due_at'] != None and (lesson['status'] != "attempted" or lesson['submitted_at'] == None):
                 homework.append([course[1],lesson['title'],datetime.fromisoformat(lesson['effective_due_at']).timestamp()])
 
     return homework
