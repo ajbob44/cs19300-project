@@ -10,7 +10,7 @@ for l in f.readlines():
 f.close()
 
 while True:
-    homeworks = getedhw() + getthhw()
+    homeworks = getedhw()# + getthhw()
 
     duesoon = []
     for homework in homeworks:
