@@ -1,5 +1,7 @@
 discord webhook url=(discord webhook url)
 edstem token=(edstem token)
-tophat token=(tophat token)
 gradescope login=(gradescope email)
 gradescope password=(gradescope password)
+tophat login=(tophat email)
+tophat password=(tophat password)
+tophat classids=(tophat class id)

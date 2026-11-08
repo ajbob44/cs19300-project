@@ -11,7 +11,7 @@ for l in f.readlines():
 f.close()
 
 while True:
-    homeworks = getedhw() + getgradescopehw()# + getthhw()
+    homeworks = getedhw() + getgradescopehw() + getthhw()
 
     duesoon = []
     for homework in homeworks:
